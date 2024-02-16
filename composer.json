@@ -1,0 +1,39 @@
+{
+  "require": {
+    "php": ">=8.1",
+    "yiisoft/yii2": "2.0.49",
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "yiisoft/yii2-jui": "~2.0.0",
+    "phamxuanloc/yii2-jui-timepicker": "*",
+    "ext-json": "*",
+    "ext-simpleXml": "*",
+    "vlucas/phpdotenv": "^5.6@dev"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.1.0",
+    "yiisoft/yii2-faker": "~2.0.0",
+    "phpunit/phpunit": "9.5.26",
+    "phpunit/phpunit-selenium": "9.0.0"
+  },
+  "minimum-stability": "dev",
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false,
+      "installer-paths": {
+        "npm-asset-library": "vendor/npm",
+        "bower-asset-library": "vendor/bower"
+      }
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
