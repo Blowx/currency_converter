@@ -1,0 +1,315 @@
+.xxx-modal-default__body {
+    max-width: 800px;
+    padding-top: 35px;
+    padding-bottom: 30px
+}
+
+.xxx-modal-default__body.xxx-modal-default__body--600 {
+    max-width: 600px
+}
+
+.xxx-modal-default__body.xxx-modal-default__body--pt-0 {
+    padding-top: 0
+}
+
+.xxx-modal-default__body.xxx-modal-default__body--pb-0 {
+    padding-bottom: 0
+}
+
+.xxx-modal-default__top {
+    padding-left: 30px;
+    padding-right: 30px
+}
+
+.xxx-modal-default__top.xxx-modal-default__top--base-ptb {
+    padding-top: 35px;
+    padding-bottom: 20px
+}
+
+.xxx-modal-default__top.xxx-modal-default__top--base-ptb>.h4 {
+    margin-bottom: 0
+}
+
+.xxx-modal-default__wrapp-bottom {
+    padding: 20px 30px 0
+}
+
+.xxx-modal .xxx-table-default td:first-of-type {
+    padding-left: 30px
+}
+
+.xxx-modal .xxx-product-info .xxx-table-default td:first-of-type {
+    padding-left: 0
+}
+
+.xxx-modal-default__wrapp-bottom--shadow {
+    position: relative
+}
+
+.xxx-modal-default__wrapp-bottom--shadow::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: linear-gradient(to bottom,rgba(241,244,247,0) 0,rgba(241,244,247,1) 100%)
+}
+
+.xxx-modal-default__body .h4 {
+    display: block
+}
+
+.xxx-modal-default__body .xxx-datepicker.input-group {
+    display: inline-block
+}
+
+.xxx-modal-default--fixed-header .xxx-modal-default__top {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 55;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0
+}
+
+.xxx-modal-default__content.xxx-modal-default__content--default-p {
+    padding-left: 30px;
+    padding-right: 30px
+}
+
+@media screen and (max-width: 740px) {
+    .xxx-modal-default__top {
+        padding-left:15px;
+        padding-right: 15px
+    }
+
+    .xxx-modal-default__top.mob\:xxx-modal-default__top--pt-20 {
+        padding-top: 20px
+    }
+
+    .xxx-modal-default__body .xxx-datepicker.input-group {
+        display: block
+    }
+
+    .xxx-modal-default__content {
+        border-top: 1px solid #e9edf0
+    }
+
+    .xxx-modal-default__content.xxx-modal-default__content--no-bt {
+        border-top: 0
+    }
+
+    .xxx-modal-default__body {
+        max-width: 100%
+    }
+
+    .xxx-modal-default__top.mob\:xxx-modal-default__top--fixed {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: -1px;
+        padding-right: 30px
+    }
+
+    .xxx-modal-default__content.xxx-modal-default__content--default-p {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+}
+
+@media screen and (min-width: 741px) and (max-width:1024px) {
+    .xxx-modal-default__body {
+        max-width:95%
+    }
+}
+
+.xxx-modal.xxx-modal-referal-offer {
+    padding: 0
+}
+
+.xxx-modal.xxx-modal-referal-offer .xxx-modal-close {
+    right: 20px;
+    top: 17px
+}
+
+.xxx-modal-referal-offer__title {
+    font-size: 20px;
+    line-height: 25px;
+    font-family: "Lato Black",sans-serif;
+    padding-right: 40px
+}
+
+.xxx-modal-referal-offer__content {
+    border-bottom: 1px solid #e8ecef;
+    padding: 20px 15px 25px 15px
+}
+
+.xxx-modal-referal-offer__bottom {
+    padding: 20px 15px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 15px
+}
+
+.xxx-modal-referal-offer__form {
+    margin-top: 25px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 25px
+}
+
+.xxx-modal-referal-offer .xxx-g-checkbox_label>a {
+    display: inline;
+    border-bottom: 1px dashed
+}
+
+@media screen and (min-width: 740px) {
+    .xxx-modal.xxx-modal-referal-offer {
+        max-width:600px
+    }
+
+    .xxx-modal-referal-offer__title {
+        font-size: 24px;
+        line-height: 30px;
+        padding-right: 10px
+    }
+
+    .xxx-modal-referal-offer__content {
+        padding: 30px 30px 25px 30px
+    }
+
+    .xxx-modal-referal-offer__bottom {
+        padding: 20px 30px 30px 30px;
+        grid-template-columns: fit-content(100%) fit-content(100%);
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        grid-gap: 50px
+    }
+
+    .xxx-modal-referal-offer__form {
+        margin-top: 25px;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 30px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 25px;
+        grid-column-gap: 30px;
+        -ms-grid-rows: auto 25px auto
+    }
+
+    .xxx-modal-referal-offer__form.step-1 {
+        grid-template-areas: "fio fio" "phone credit_city_id"
+    }
+
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:first-of-type,.xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp-error:first-of-type {
+        grid-area: fio
+    }
+
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:nth-of-type(2),.xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp-error:nth-of-type(2) {
+        grid-area: phone
+    }
+
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:nth-of-type(3),.xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp-error:nth-of-type(3) {
+        grid-area: credit_city_id
+    }
+
+    .xxx-modal-referal-offer__form.step-2 {
+        grid-template-areas: "birthday place_of_birth" "passport passport_issuer_date" "passport_issuer passport_issuer_code"
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:first-of-type {
+        grid-area: birthday
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(2) {
+        grid-area: place_of_birth
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(3) {
+        grid-area: passport
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(4) {
+        grid-area: passport_issuer_date
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(5) {
+        grid-area: passport_issuer
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(6) {
+        grid-area: passport_issuer_code
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:first-of-type {
+        -ms-grid-row:1;
+        -ms-grid-column: 1
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(4) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(5) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1
+    }
+
+    .xxx-modal-referal-offer__form.step-2 .xxx-g-input-wrapp:nth-of-type(6) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:first-of-type {
+        -ms-grid-row:1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2
+    }
+
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:nth-of-type(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1
+    }
+
+    .xxx-modal-referal-offer__form.step-1 .xxx-g-input-wrapp:nth-of-type(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2
+    }
+}
