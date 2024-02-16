@@ -14,6 +14,7 @@ RUN docker-php-ext-install pdo_mysql zip
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 COPY docker/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY docker/php/conf.d/error-logging.ini /usr/local/etc/php/conf.d/error-logging.ini
 COPY docker/php/cronjob /etc/cron.d/cronjob
 RUN chmod 0644 /etc/cron.d/cronjob
 
