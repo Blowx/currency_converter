@@ -18,7 +18,12 @@ class ConverterController extends Controller
     {
         $this->layout = 'main';
         $defaultCurrency = RestEntity\Currency::find()->code(RestInstance::config()->get('DEFAULT_CURRENCY_CODE'))->one();
-        $currencies = RestEntity\Currency::find()->status(RestDefines\Status::ACTIVE)->all();
+        $config = new RestModels\Currency\GetAll\QueryConfig();
+        $config->filter = [RestDefines\Request\Parameter::STATUS => RestDefines\Status::ACTIVE];
+        $currencies = RestEntity\Currency\Repository::query($config)
+            ->notLowPriority()
+            ->orderByPriority()
+            ->all();
 
         $currencyData = [];
 

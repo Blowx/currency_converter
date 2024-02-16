@@ -11,7 +11,8 @@
                 <div class="xxx-currency-grid xxx-currency-grid--alt-grid">
                     <div class="xxx-currency-grid__block xxx-currency-grid__block--separately">
                         <div class="xxx-line-h-1 xxx-mb-15"><a href="https://bankiros.ru/converter"
-                                                               class="xxx-text-bold xxx-fs-18 xxx-g-link xxx-g-link--no-bd">Конвертер валют
+                                                               class="xxx-text-bold xxx-fs-18 xxx-g-link xxx-g-link--no-bd">Конвертер
+                                валют
                                 ЦБ РФ</a></div>
                         <div class="xxx-tab-list-wrap xxx-tab-list-wrap--pt-0 xxx-tab-list-wrap--only-border-light xxx-mb-15">
                             <ul class="xxx-tab__list xxx-tab__list--fix-scrollbar xxx-tab__list--overflow-auto">
@@ -29,6 +30,9 @@
                                                    data-code="<?php echo $currency[ 'code' ] ?>"
                                                    value="<?php echo $currency[ 'amount' ] ?>">
                                             <span class="xxx-input-converter__before-text"><?php echo $currency[ 'code' ] ?></span>
+                                            <img class="xxx-input-converter__img" src="/assets/img/<?php echo
+                                            strtolower($currency[ 'code' ]); ?>.svg"
+                                                 alt="<?php echo $currency[ 'code' ] ?>-icon">
                                         </div>
                                     <?php endforeach; ?>
                                 </div>

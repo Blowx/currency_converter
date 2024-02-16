@@ -14,6 +14,7 @@ use application\modules\rest\models\Defines;
  * @property int     $updatedAt
  * @property int     $status
  * @property string  $code
+ * @property int     $priority
  * @property Currency\State[] $currencyStates
  * @property Currency\State   $lastCurrencyState
  */
@@ -37,7 +38,7 @@ class Currency extends models\MySqlEntity
         return [
             [['status'], 'integer'],
             [['name', 'source', 'code', 'numCode'], 'string', 'max' => 255],
-            [['createdAt', 'updatedAt'], 'safe'],
+            [['createdAt', 'updatedAt', 'priority'], 'safe'],
         ];
     }
 

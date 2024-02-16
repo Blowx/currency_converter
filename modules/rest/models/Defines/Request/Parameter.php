@@ -111,4 +111,11 @@ class Parameter extends core\models\Defines\Request\Parameter
      * @var string
      */
     const AMOUNT = 'amount';
+
+    /**
+     * Priority
+     *
+     * @var string
+     */
+    const PRIORITY = 'priority';
 }

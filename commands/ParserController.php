@@ -6,8 +6,10 @@ use yii;
 use application\models;
 use application\models\Defines;
 use application\models\Parser;
+use application\modules\rest\models\Defines as RestDefines;
 use application\modules\rest\models\Entity as RestEntity;
 use application\modules\rest\models\Instance as RestInstance;
+use yii\console\ExitCode;
 
 class ParserController extends yii\console\Controller
 {
@@ -32,7 +34,7 @@ class ParserController extends yii\console\Controller
         if ($data === false) {
             $this->stderr("Failed to fetch data.\n", \yii\helpers\Console::FG_RED);
 
-            return self::EXIT_CODE_ERROR;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
         $parser = parser\ParserFactory::create(Defines\Parser\Type::XML);
         /** @var models\Dto\CurrencyDto[] $currencyDTOs */
@@ -40,22 +42,35 @@ class ParserController extends yii\console\Controller
         foreach ($currencyDTOs as $currencyDTO) {
             $currency = RestEntity\Currency\Repository::findByCode($currencyDTO->code);
 
-            if (!($currency instanceof RestEntity\Currency)) {
+            if (!( $currency instanceof RestEntity\Currency )) {
                 $currency = RestEntity\Currency\Factory::createFromDto($currencyDTO);
                 $currency->save();
             }
+            $this->updatePriority($currency);
 
             $formattedDate = date('Y-m-d', strtotime(str_replace('/', '-', $date)));
             $todayCurrency = RestEntity\Currency\State\Repository::findTodayByCurrencyId($currency->id, $formattedDate);
 
-            if (!($todayCurrency instanceof RestEntity\Currency\State)) {
-                $todayCurrency = RestEntity\Currency\State\Factory::createFromDto($currency, $currencyDTO, $formattedDate);
+            if (!( $todayCurrency instanceof RestEntity\Currency\State )) {
+                $todayCurrency = RestEntity\Currency\State\Factory::createFromDto($currency, $currencyDTO,
+                    $formattedDate);
             }
 
             $todayCurrency->value = $currencyDTO->value;
             $todayCurrency->vUnitRate = $currencyDTO->vUnitRate;
 
             $todayCurrency->save();
+        }
+
+        return ExitCode::OK;
+    }
+
+    private function updatePriority(RestEntity\Currency $currency): void
+    {
+        if (RestDefines\Currency\Code::isTopPrio($currency->code)
+            && $currency->priority !== $newPriority = RestDefines\Currency\Priority::getByCode($currency->code)) {
+            $currency->priority = $newPriority;
+            $currency->save();
         }
     }
 }

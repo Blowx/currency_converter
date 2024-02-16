@@ -27,7 +27,7 @@ class Handler extends models\Handler
 
         $config = new QueryConfig();
         $config->assignRequestData($this->request);
-        $query = Entity\Currency\Repository::query($config);
+        $query = Entity\Currency\Repository::query($config)->notLowPriority()->orderByPriority();
         $response = new Response();
         $response->currencies = $query->all();
         $response->count = $query->count();

@@ -26,9 +26,11 @@ class Handler extends models\Handler
         parent::process();
         $config = new QueryConfig();
         $config->assignRequestData($this->request);
-        $query = Entity\Currency\Repository::query($config);
+        $query = Entity\Currency\Repository::query($config)->notLowPriority();
         $response = new Response();
-        $response->requestedCurrency = Entity\Currency::find()->code($this->request->code())->one();
+        $response->requestedCurrency = Entity\Currency::find()
+            ->code($this->request->code())
+            ->one();
         $response->currencies = $query->all();
         $response->count = $query->count();
         $response->config = $config;
