@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  php:
+    container_name: php-currency
+    build:
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    environment:
+      PHP_IDE_CONFIG: "serverName=currency"
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/
+
+  mysql:
+    container_name: mysql-currency
+    image: mysql:8.0
+    platform: linux/arm64
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CRNC_DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${CRNC_DB_NAME}
+      MYSQL_USER: ${CRNC_DB_USERNAME}
+      MYSQL_PASSWORD: ${CRNC_DB_PASSWORD}
+    ports:
+      - "3306:3306"
+
+  nginx:
+    container_name: nginx-currency
+    image: nginx:1.22.1-alpine
+    build:
+      dockerfile: docker/nginx/Dockerfile
+    volumes:
+      - ./docker/nginx/currency.conf:/etc/nginx/conf.d/currency.conf
+      - ./:/var/www/
+    platform: linux/arm64
+    links:
+      - php
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "443:443"
+    depends_on:
+      - php
+
+volumes:
+  currency-data:

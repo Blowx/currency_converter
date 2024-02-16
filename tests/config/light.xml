@@ -1,0 +1,57 @@
+<phpunit bootstrap="../bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         verbose="true">
+    <!--         timeoutForSmallTests="30"-->
+    <!--         timeoutForMediumTests="60"-->
+    <!--         timeoutForLargeTests="120">-->
+    <!--<php>-->
+    <!--<ini name="memory_limit" value="1G" />-->
+    <!--</php>-->
+
+    <!--    <selenium>-->
+    <!--        &lt;!&ndash;browser name="Internet Explorer" browser="*iexplore" /&ndash;&gt;-->
+
+    <!--        <browser name="Firefox"-->
+    <!--                 browser="*firefox"-->
+    <!--                 host="127.0.0.1"-->
+    <!--                 port="5555"-->
+    <!--                 timeout="30"/>-->
+    <!--    </selenium>-->
+
+    <!--    <listeners>-->
+    <!--        <listener class="PHPUnit_Util_Log_JSON"/>-->
+    <!--    </listeners>-->
+
+    <testsuites>
+        <!--        <testsuite name="debug">-->
+        <!--            <directory suffix="Test.php">../models/Defines</directory>-->
+        <!--        </testsuite>-->
+
+        <!--        <testsuite name="full">-->
+        <!--            <directory suffix="Test.php">../</directory>-->
+        <!--        </testsuite>-->
+
+        <testsuite name="unit">
+            <directory>../modules/rest</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <log type="junit" target="../../build/logs/junit.xml"/>
+    </logging>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">../../modules/</directory>
+            <exclude>
+                <directory>../../modules/rest/controllers</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

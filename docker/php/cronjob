@@ -1,0 +1,1 @@
+0 */12 * * *   www-data /bin/bash /var/www/cmd.sh parser/xml-parse
