@@ -4,7 +4,7 @@ services:
   php:
     container_name: php-currency
     build:
-      dockerfile: Dockerfile
+      dockerfile: docker/php/Dockerfile
     platform: linux/arm64
     environment:
       PHP_IDE_CONFIG: "serverName=currency"
@@ -31,7 +31,7 @@ services:
     build:
       dockerfile: docker/nginx/Dockerfile
     volumes:
-      - ./docker/nginx/currency.conf:/etc/nginx/conf.d/currency.conf
+      - ./docker/nginx/conf.d/currency.conf:/etc/nginx/conf.d/currency.conf
       - ./:/var/www/
     platform: linux/arm64
     links:
