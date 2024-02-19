@@ -5,7 +5,6 @@ services:
     container_name: php-currency
     build:
       dockerfile: docker/php/Dockerfile
-    platform: linux/arm64
     environment:
       PHP_IDE_CONFIG: "serverName=currency"
     ports:
@@ -16,7 +15,6 @@ services:
   mysql:
     container_name: mysql-currency
     image: mysql:8.0
-    platform: linux/arm64
     environment:
       MYSQL_ROOT_PASSWORD: ${CRNC_DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${CRNC_DB_NAME}
@@ -33,7 +31,6 @@ services:
     volumes:
       - ./docker/nginx/conf.d/currency.conf:/etc/nginx/conf.d/currency.conf
       - ./:/var/www/
-    platform: linux/arm64
     links:
       - php
     ports:
