@@ -6,6 +6,14 @@ use application\modules\rest\models\Entity;
 
 class Helper
 {
+    /**
+     * Returns currency's data
+     *
+     * @param Entity\Currency $currency
+     * @param array           $embedded
+     *
+     * @return array
+     */
     public static function getData(Entity\Currency $currency, array $embedded = []): array
     {
         $data = self::getDefaultData($currency);
@@ -21,6 +29,13 @@ class Helper
         return $data;
     }
 
+    /**
+     * Returns base currency's data
+     *
+     * @param Entity\Currency $currency
+     *
+     * @return array
+     */
     public static function getDefaultData(Entity\Currency $currency)
     {
         return [
@@ -31,6 +46,13 @@ class Helper
         ];
     }
 
+    /**
+     * Returns information about latest currency's exchange value
+     *
+     * @param Entity\Currency $currency
+     *
+     * @return array
+     */
     public static function getValueData(Entity\Currency $currency)
     {
         $lastState = $currency->lastCurrencyState;

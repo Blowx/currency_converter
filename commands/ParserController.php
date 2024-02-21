@@ -13,6 +13,11 @@ use yii\console\ExitCode;
 
 class ParserController extends yii\console\Controller
 {
+    /**
+     * Returns first DTO as russian language
+     *
+     * @return models\Dto\CurrencyDto
+     */
     public function default(): models\Dto\CurrencyDto
     {
         return new models\Dto\CurrencyDTO(
@@ -25,6 +30,15 @@ class ParserController extends yii\console\Controller
         );
     }
 
+    /**
+     * Run this action by executing command `php yii parser/xml-parse`
+     * Parses information from the link and adds it to database
+     *
+     * @param array $args
+     *
+     * @return int
+     * @throws \application\modules\rest\models\Action\Error\BadRequest
+     */
     public function actionXmlParse(array $args = array())
     {
         $date = date('d/m/Y');
@@ -65,6 +79,14 @@ class ParserController extends yii\console\Controller
         return ExitCode::OK;
     }
 
+    /**
+     * Updates Currency's priority, in case if currency was added before adding field priority
+     *
+     * @param RestEntity\Currency $currency
+     *
+     * @return void
+     * @throws \application\modules\rest\models\Action\Error\BadRequest
+     */
     private function updatePriority(RestEntity\Currency $currency): void
     {
         if (RestDefines\Currency\Code::isTopPrio($currency->code)

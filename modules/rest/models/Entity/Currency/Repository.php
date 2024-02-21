@@ -7,6 +7,14 @@ use application\modules\rest\models\Entity;
 
 class Repository
 {
+    /**
+     * General query, that should be used in GET All endpoint
+     *
+     * @param Entity\QueryConfig $config
+     *
+     * @return Entity\ActiveQuery|object|\yii\db\ActiveQuery
+     * @throws \yii\base\InvalidConfigException
+     */
     public static function query(Entity\QueryConfig $config)
     {
         $query = Entity\Currency::find()
@@ -41,6 +49,14 @@ class Repository
         return $query;
     }
 
+    /**
+     * Returns currency by it's charCode (AED\BYN\USD)
+     *
+     * @param string $code
+     *
+     * @return Entity\Currency|null
+     * @throws \yii\base\InvalidConfigException
+     */
     public static function findByCode(string $code): ?Entity\Currency
     {
         return Entity\Currency::find()->code($code)->one();

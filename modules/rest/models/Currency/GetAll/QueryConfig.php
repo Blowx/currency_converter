@@ -7,6 +7,9 @@ use application\modules\rest\models\Entity;
 
 class QueryConfig extends Entity\QueryConfig
 {
+    /**
+     * @inheritDoc
+     */
     public function assignRequestData(models\Request\Search $request)
     {
         parent::assignRequestData($request);

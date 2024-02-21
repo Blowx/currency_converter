@@ -33,6 +33,9 @@ class State extends models\MySqlEntity
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getCurrency()
     {
         return $this->hasOne(Entity\Currency::class, ['id' => 'currencyId']);

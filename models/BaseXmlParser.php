@@ -6,8 +6,17 @@ use application\modules\rest\models\Instance as RestInstance;
 
 abstract class BaseXmlParser implements ParserInterface
 {
+
+    /**
+     * @inheritDoc
+     */
     abstract function getUrlKey();
 
+    /**
+     * Returns information from the link
+     *
+     * @return \SimpleXMLElement
+     */
     protected function getXmlData(): \SimpleXMLElement
     {
         $url = RestInstance::config()->get($this->getUrlKey());

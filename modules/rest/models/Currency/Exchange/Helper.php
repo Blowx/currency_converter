@@ -9,6 +9,15 @@ use application\modules\rest\models\Entity;
  **/
 class Helper
 {
+    /**
+     * Returns Currency data
+     *
+     * @param Entity\Currency $currency
+     * @param Entity\Currency $requestedCurrency
+     * @param                 $amount
+     *
+     * @return array
+     */
     public static function getData(Entity\Currency $currency, Entity\Currency $requestedCurrency, $amount): array
     {
         return [
@@ -22,6 +31,15 @@ class Helper
         ];
     }
 
+    /**
+     * Calculates amount, using currencyState and requested currency state
+     *
+     * @param Entity\Currency\State $currencyState
+     * @param Entity\Currency\State $requestedCurrencyState
+     * @param float                 $amount
+     *
+     * @return float
+     */
     public static function calculateValue(
         Entity\Currency\State $currencyState,
         Entity\Currency\State $requestedCurrencyState,

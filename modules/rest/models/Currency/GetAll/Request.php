@@ -7,5 +7,8 @@ use application\modules\rest\models\Defines;
 
 class Request extends models\Request\Search
 {
+    /**
+     * @inheritdoc
+     */
     public $allowFilterParams = [Defines\Request\Parameter::STATUS];
 }

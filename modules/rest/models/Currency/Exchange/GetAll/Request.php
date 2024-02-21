@@ -23,11 +23,21 @@ class Request extends models\Request\Search
         return array_merge($data, [Defines\Request\Parameter::CODE, Defines\Request\Parameter::AMOUNT]);
     }
 
+    /**
+     * Code
+     *
+     * @return mixed|string
+     */
     public function code()
     {
         return $this->getStr(Defines\Request\Parameter::CODE);
     }
 
+    /**
+     * Amount
+     *
+     * @return float
+     */
     public function amount()
     {
         return $this->getFlt(Defines\Request\Parameter::AMOUNT);

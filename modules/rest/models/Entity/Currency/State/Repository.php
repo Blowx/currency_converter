@@ -9,6 +9,15 @@ use application\modules\rest\models\Entity;
  **/
 class Repository
 {
+    /**
+     * Returns currency state by currency id
+     *
+     * @param        $currencyId
+     * @param string $date
+     *
+     * @return Entity\Currency\State|null
+     * @throws \yii\base\InvalidConfigException
+     */
     public static function findTodayByCurrencyId($currencyId, string $date): ?Entity\Currency\State
     {
         return Entity\Currency\State::find()

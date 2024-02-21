@@ -19,6 +19,11 @@ class Request extends models\Request
         return array_merge($data, [Defines\Request\Parameter::CODE]);
     }
 
+    /**
+     * Code
+     *
+     * @return mixed|string
+     */
     public function code()
     {
         return $this->getStr(Defines\Request\Parameter::CODE);

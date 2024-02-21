@@ -21,6 +21,11 @@ class Response extends models\Response
      */
     public array $currencies = [];
 
+    /**
+     * Embedded array
+     *
+     * @var array
+     */
     public array $embedded = [];
     /**
      * Count of currencies
@@ -48,7 +53,8 @@ class Response extends models\Response
 
         foreach ($this->currencies as $currency) {
 
-            $this->data[] = models\Currency\Exchange\Helper::getData($currency, $this->requestedCurrency, $this->amount);
+            $this->data[] = models\Currency\Exchange\Helper::getData($currency, $this->requestedCurrency,
+                $this->amount);
         }
 
         return [

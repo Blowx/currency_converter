@@ -11,6 +11,13 @@ use application\modules\rest\models\Entity;
  **/
 class Factory
 {
+    /**
+     * Returns currency entity
+     *
+     * @param $currencyDTO
+     *
+     * @return Entity\Currency
+     */
     public static function createFromDto($currencyDTO): Entity\Currency
     {
         $currency = new Entity\Currency();

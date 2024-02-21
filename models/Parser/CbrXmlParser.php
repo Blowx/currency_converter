@@ -6,6 +6,9 @@ use application\models;
 
 final class CbrXmlParser extends models\BaseXmlParser
 {
+    /**
+     * @inheritDoc
+     */
     public function parse(): array
     {
         $result = [];
@@ -26,6 +29,9 @@ final class CbrXmlParser extends models\BaseXmlParser
         return $result;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getUrlKey()
     {
         return 'PARSER_XML_URL';

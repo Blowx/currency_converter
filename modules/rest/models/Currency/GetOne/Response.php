@@ -9,6 +9,12 @@ class Response extends models\Response
 {
     public ?Entity\Currency $currency = null;
 
+
+    /**
+     * Embedded array
+     *
+     * @var array
+     */
     public array $embedded = [];
 
     /**

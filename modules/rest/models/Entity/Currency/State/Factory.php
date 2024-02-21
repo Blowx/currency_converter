@@ -9,6 +9,15 @@ use application\modules\rest\models\Entity;
  **/
 class Factory
 {
+    /**
+     * Returns currency state entity
+     *
+     * @param Entity\Currency $currency
+     * @param                 $currencyDTO
+     * @param string          $date
+     *
+     * @return Entity\Currency\State
+     */
     public static function createFromDto(Entity\Currency $currency, $currencyDTO, string $date): Entity\Currency\State
     {
         $todayCurrency = new Entity\Currency\State();

@@ -13,6 +13,11 @@ class Response extends models\Response
      */
     public array $currencies = [];
 
+    /**
+     * Embedded array
+     *
+     * @var array
+     */
     public array $embedded = [];
     /**
      * Count of currencies

@@ -42,11 +42,17 @@ class Currency extends models\MySqlEntity
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getCurrencyStates()
     {
         return $this->hasMany(Currency\State::class, ['currencyId' => 'id']);
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getLastCurrencyState()
     {
         return $this->hasOne(Currency\State::class, ['currencyId' => 'id'])
